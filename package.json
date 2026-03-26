@@ -1,0 +1,14 @@
+{
+  "name": "ignatiuz-crm",
+  "version": "1.0.0",
+  "description": "Ignatiuz CRM — Full-stack Customer Relationship Management",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev": "cd server && node index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

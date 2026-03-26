@@ -6,8 +6,8 @@
 const jwt = require('jsonwebtoken');
 
 // Secret key for signing JWT tokens
-// In production, this should be in an environment variable!
-const JWT_SECRET = 'crm-pro-secret-key-2026';
+// Reads from .env file; falls back to default for dev convenience
+const JWT_SECRET = process.env.JWT_SECRET || 'crm-pro-secret-key-2026';
 
 // ============================================================
 // authenticateToken — Verifies the user is logged in

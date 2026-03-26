@@ -6,9 +6,15 @@
 
 import axios from 'axios';
 
+// In production, the API is served from the same origin → use relative path '/api'
+// In development, Vite runs on a different port → use full URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || (
+  import.meta.env.PROD ? '/api' : 'http://localhost:5000/api'
+);
+
 // Create a custom Axios instance pointing at our API
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',  // Backend server URL
+  baseURL: API_BASE_URL,
   headers: { 'Content-Type': 'application/json' }
 });
 
